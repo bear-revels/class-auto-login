@@ -2,7 +2,8 @@ name: Auto Attendance
 
 on:
   schedule:
-    - cron: "0 9,12,13,17 * * 1-5"  # Runs at 09:00, 12:30, 13:30, and 17:00 on Monday to Friday
+    - cron: "0 8,16 * * 1-5"  # Runs at 09:00 and 17:00 CET on Monday to Friday
+    - cron: "30 11,12 * * 1-5"  # Runs at 12:30 and 13:30 CET on Monday to Friday
 
 jobs:
   run_script:
