@@ -39,7 +39,7 @@ This Python program automates the process of checking in and out of class on a M
    ```bash
    git clone https://github.com/yourusername/auto-attendance.git
 
-2. Clone the repository:
+2. Install requirements:
    ```
    pip install -r requirements.txt
 
