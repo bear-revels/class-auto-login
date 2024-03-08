@@ -1,0 +1,27 @@
+name: Auto Attendance
+
+on:
+  schedule:
+    - cron: "0 9,13 * * 1,4"  # Runs at 9:00 and 13:00 on Mondays and Thursdays
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install selenium
+
+      - name: Run Python script
+        run: python auto_attendance.py
+        env:
+          MOODLE_USERNAME: ${{ secrets.MOODLE_USERNAME }}
+          MOODLE_PASSWORD: ${{ secrets.MOODLE_PASSWORD }}
